@@ -1,105 +1,74 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thuong Nguyen — Comic Portfolio</title>
-
-  <!-- Google Fonts: Bangers (headline) + Comic Neue (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet" />
-
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            bangers: ['Bangers', 'cursive'],
-            comic:   ['Comic Neue', 'cursive'],
-          },
+          fontFamily: { bangers: ["Bangers","cursive"], comic: ["Comic Neue","cursive"] },
           colors: {
-            'pop-yellow': '#FFE000',
-            'pop-red':    '#E8161B',
-            'pop-blue':   '#005BAC',
-            'pop-black':  '#0D0D0D',
-            'pop-white':  '#FAFAFA',
-            'pop-cyan':   '#00B4D8',
-            'pop-orange': '#FF6B35',
+            "pop-yellow":"#FFE000","pop-red":"#E8161B","pop-blue":"#005BAC",
+            "pop-black":"#0D0D0D","pop-white":"#FAFAFA","pop-cyan":"#00B4D8","pop-orange":"#FF6B35"
           },
           boxShadow: {
-            'hard-sm':  '4px 4px 0 #0D0D0D',
-            'hard':     '6px 6px 0 #0D0D0D',
-            'hard-lg':  '8px 8px 0 #0D0D0D',
-            'hard-xl':  '12px 12px 0 #0D0D0D',
-          },
-        },
-      },
+            "hard-sm":"4px 4px 0 #0D0D0D","hard":"6px 6px 0 #0D0D0D",
+            "hard-lg":"8px 8px 0 #0D0D0D","hard-xl":"12px 12px 0 #0D0D0D"
+          }
+        }
+      }
     };
   </script>
-
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body class="font-comic bg-pop-yellow overflow-x-hidden">
 
-  <!-- ╔══════════════════════════════════════════╗
-       ║            NAVIGATION                   ║
-       ╚══════════════════════════════════════════╝ -->
+  <!-- NAVBAR -->
   <nav id="navbar" class="comic-nav fixed top-0 left-0 right-0 z-50 bg-pop-yellow border-b-4 border-pop-black">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-
-      <!-- Logo speech bubble -->
-      <a href="#hero" class="speech-bubble-logo font-bangers text-2xl tracking-wide text-pop-black relative">
+      <a href="index.html" class="speech-bubble-logo font-bangers text-2xl tracking-wide text-pop-black relative">
         THUONG!
       </a>
-
-      <!-- Desktop nav: each link is a speech bubble -->
       <ul id="navLinks" class="hidden md:flex gap-4 items-center">
-        <li><a href="#hero"      class="bubble-link">HOME</a></li>
-        <li><a href="#about"     class="bubble-link">ABOUT</a></li>
-        <li><a href="#services"  class="bubble-link">SKILLS</a></li>
-        <li><a href="#portfolio" class="bubble-link">WORK</a></li>
-        <li><a href="#contact"   class="bubble-link bubble-link--cta">HIRE ME!</a></li>
+        <li><a href="index.html"     class="bubble-link" data-page="index">HOME</a></li>
+        <li><a href="about.html"     class="bubble-link" data-page="about">ABOUT</a></li>
+        <li><a href="skills.html"    class="bubble-link" data-page="skills">SKILLS</a></li>
+        <li><a href="portfolio.html" class="bubble-link" data-page="portfolio">WORK</a></li>
+        <li><a href="contact.html"   class="bubble-link bubble-link--cta" data-page="contact">HIRE ME!</a></li>
       </ul>
-
-      <!-- Hamburger -->
-      <button id="navToggle" class="md:hidden flex flex-col gap-1.5 p-2 border-3 border-pop-black bg-pop-white shadow-hard-sm" aria-label="Toggle menu">
+      <button id="navToggle" class="md:hidden flex flex-col gap-1.5 p-2 border-2 border-pop-black bg-pop-white shadow-hard-sm" aria-label="Toggle menu">
         <span class="ham-line block w-6 h-0.5 bg-pop-black transition-all duration-300"></span>
         <span class="ham-line block w-6 h-0.5 bg-pop-black transition-all duration-300"></span>
         <span class="ham-line block w-6 h-0.5 bg-pop-black transition-all duration-300"></span>
       </button>
     </div>
-
-    <!-- Mobile menu -->
     <div id="mobileMenu" class="mobile-menu hidden md:hidden bg-pop-blue border-t-4 border-pop-black px-4 pb-4 pt-2">
       <ul class="flex flex-col gap-3">
-        <li><a href="#hero"      class="bubble-link-mobile">HOME</a></li>
-        <li><a href="#about"     class="bubble-link-mobile">ABOUT</a></li>
-        <li><a href="#services"  class="bubble-link-mobile">SKILLS</a></li>
-        <li><a href="#portfolio" class="bubble-link-mobile">WORK</a></li>
-        <li><a href="#contact"   class="bubble-link-mobile bubble-link-mobile--cta">HIRE ME!</a></li>
+        <li><a href="index.html"     class="bubble-link-mobile" data-page="index">HOME</a></li>
+        <li><a href="about.html"     class="bubble-link-mobile" data-page="about">ABOUT</a></li>
+        <li><a href="skills.html"    class="bubble-link-mobile" data-page="skills">SKILLS</a></li>
+        <li><a href="portfolio.html" class="bubble-link-mobile" data-page="portfolio">WORK</a></li>
+        <li><a href="contact.html"   class="bubble-link-mobile bubble-link-mobile--cta" data-page="contact">HIRE ME!</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- ╔══════════════════════════════════════════╗
-       ║               HERO PANEL                ║
-       ╚══════════════════════════════════════════╝ -->
+  <!-- HERO SECTION -->
   <section id="hero" class="hero-section relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-
-    <!-- Halftone + action-lines bg -->
     <div class="action-lines-bg absolute inset-0 pointer-events-none"></div>
     <div class="halftone-overlay absolute inset-0 pointer-events-none opacity-20"></div>
 
-    <!-- Comic page panels grid -->
     <div class="hero-panels relative z-10 w-full max-w-6xl mx-auto px-4 py-12 grid grid-cols-12 grid-rows-[auto_auto] gap-3">
 
-      <!-- Panel 1 – big intro text (col 1-7) -->
+      <!-- Panel 1: intro text -->
       <div class="comic-panel col-span-12 md:col-span-7 bg-pop-white flex flex-col justify-center p-8 min-h-64">
-        <p class="sound-effect text-pop-red text-lg mb-2">— Hello World! —</p>
+        <p class="sound-effect text-pop-red text-lg mb-2">-- Hello World! --</p>
         <h1 class="font-bangers text-6xl md:text-8xl text-pop-black leading-none tracking-wide mb-4">
           THUONG<br/>
           <span class="text-pop-blue">NGUYEN</span>
@@ -107,395 +76,47 @@
         <p class="font-bangers text-2xl md:text-3xl text-pop-red tracking-widest mb-6">
           UI/UX Designer &amp; Front-End Dev
         </p>
-        <a href="#portfolio" class="comic-btn bg-pop-red text-pop-white self-start">
-          VIEW MY WORK ➜
-        </a>
+        <div class="flex flex-wrap gap-3">
+          <a href="portfolio.html" class="comic-btn bg-pop-red text-pop-white">VIEW MY WORK &rarr;</a>
+          <a href="about.html"     class="comic-btn bg-pop-blue text-pop-white">ABOUT ME</a>
+        </div>
       </div>
 
-      <!-- Panel 2 – hero image (col 8-12) -->
+      <!-- Panel 2: hero image -->
       <div class="comic-panel col-span-12 md:col-span-5 bg-pop-blue min-h-64 overflow-hidden relative">
-        <img src="images/hero-bg.jpg" alt="Hero" class="w-full h-full object-cover mix-blend-luminosity opacity-80" />
+        <img src="images/hero-bg.jpg" alt="Hero illustration" class="w-full h-full object-cover mix-blend-luminosity opacity-80" />
         <div class="absolute inset-0 halftone-overlay opacity-30"></div>
         <div class="pow-badge absolute top-4 right-4 font-bangers text-pop-yellow text-3xl rotate-12 leading-none text-center pow-shape">
           POW!
         </div>
       </div>
 
-      <!-- Panel 3 – tagline strip (full width) -->
+      <!-- Panel 3: tagline strip -->
       <div class="comic-panel col-span-12 bg-pop-red py-4 px-8 flex items-center justify-center">
         <p class="font-bangers text-pop-yellow text-2xl md:text-4xl tracking-[.2em] text-center">
-          ★ TURNING IDEAS INTO PIXEL-PERFECT EXPERIENCES ★
+          &starf; TURNING IDEAS INTO PIXEL-PERFECT EXPERIENCES &starf;
         </p>
       </div>
 
     </div>
 
-    <!-- Scroll bounce -->
-    <a href="#about" class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 scroll-bounce font-bangers text-pop-black text-sm text-center flex flex-col items-center gap-1">
-      <span class="speech-bubble-tiny">SCROLL!</span>
-      <span class="text-2xl">↓</span>
+    <!-- Scroll CTA -->
+    <a href="about.html" class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 scroll-bounce font-bangers text-pop-black text-sm text-center flex flex-col items-center gap-1">
+      <span class="speech-bubble-tiny">NEXT!</span>
+      <span class="text-2xl">&darr;</span>
     </a>
   </section>
 
-  <!-- ╔══════════════════════════════════════════╗
-       ║           ABOUT PANELS                  ║
-       ╚══════════════════════════════════════════╝ -->
-  <section id="about" class="relative py-16 bg-pop-blue overflow-hidden">
-    <div class="dots-bg absolute inset-0 pointer-events-none opacity-15"></div>
-    <div class="relative z-10 max-w-6xl mx-auto px-4">
-      <div class="section-bang bg-pop-yellow text-pop-black font-bangers inline-block px-6 py-2 text-3xl mb-8 rotate-[-1deg]">
-        CHAPTER 2: ORIGIN STORY
-      </div>
-      <div class="grid grid-cols-12 gap-3">
-
-        <!-- Photo panel -->
-        <div class="comic-panel col-span-12 md:col-span-4 bg-pop-yellow overflow-hidden relative min-h-72">
-          <img src="images/profile.jpg" alt="Thuong Nguyen" class="w-full h-full object-cover" />
-          <div class="absolute bottom-0 left-0 right-0 bg-pop-black py-2 px-4">
-            <p class="font-bangers text-pop-yellow text-xl text-center tracking-widest">THE HERO</p>
-          </div>
-        </div>
-
-        <!-- Bio panel -->
-        <div class="comic-panel col-span-12 md:col-span-8 bg-pop-white p-8 flex flex-col justify-center">
-          <h2 class="font-bangers text-5xl text-pop-blue mb-4 tracking-wide">WHO AM I?</h2>
-          <p class="text-pop-black text-lg leading-relaxed mb-4 font-comic font-bold">
-            A passionate <span class="text-pop-red font-bangers text-2xl">UI/UX Designer</span> and
-            <span class="text-pop-blue font-bangers text-2xl">Front-End Developer</span> based in
-            Ho Chi Minh City, Vietnam.
-          </p>
-          <p class="text-pop-black leading-relaxed mb-6">
-            With 4+ years of fighting bugs and defeating bad UX, I craft clean, user-centric
-            digital experiences that balance aesthetic clarity with functional excellence.
-          </p>
-          <div class="flex flex-wrap gap-4">
-            <div class="thought-bubble bg-pop-yellow text-center px-6 py-4">
-              <span class="font-bangers text-4xl text-pop-red block">4+</span>
-              <span class="font-comic font-bold text-xs uppercase tracking-widest">Years Xp</span>
-            </div>
-            <div class="thought-bubble bg-pop-red text-center px-6 py-4">
-              <span class="font-bangers text-4xl text-pop-yellow block">30+</span>
-              <span class="font-comic font-bold text-xs uppercase tracking-widest text-pop-white">Projects</span>
-            </div>
-            <div class="thought-bubble bg-pop-blue text-center px-6 py-4">
-              <span class="font-bangers text-4xl text-pop-yellow block">15+</span>
-              <span class="font-comic font-bold text-xs uppercase tracking-widest text-pop-white">Clients</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Action words strip -->
-        <div class="comic-panel col-span-12 bg-pop-black py-5 px-8 flex items-center justify-around flex-wrap gap-4">
-          <span class="font-bangers text-pop-yellow text-3xl tracking-widest">BOOM!</span>
-          <span class="font-bangers text-pop-red text-3xl tracking-widest">ZAP!</span>
-          <span class="font-bangers text-pop-cyan text-3xl tracking-widest">WHAM!</span>
-          <span class="font-bangers text-pop-yellow text-3xl tracking-widest">KA-POW!</span>
-          <span class="font-bangers text-pop-orange text-3xl tracking-widest">SMASH!</span>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ╔══════════════════════════════════════════╗
-       ║           SKILLS / SERVICES             ║
-       ╚══════════════════════════════════════════╝ -->
-  <section id="services" class="relative py-16 bg-pop-yellow overflow-hidden">
-    <div class="action-lines-bg absolute inset-0 pointer-events-none opacity-10"></div>
-    <div class="relative z-10 max-w-6xl mx-auto px-4">
-      <div class="section-bang bg-pop-red text-pop-white font-bangers inline-block px-6 py-2 text-3xl mb-8 rotate-[1deg]">
-        CHAPTER 3: SUPERPOWERS
-      </div>
-      <div class="grid grid-cols-12 gap-3">
-
-        <!-- Service card 1 -->
-        <div class="comic-panel col-span-12 md:col-span-4 bg-pop-blue text-pop-white overflow-hidden">
-          <div class="aspect-video overflow-hidden border-b-4 border-pop-black">
-            <img src="images/service-ui.jpg" alt="UI/UX Design" class="w-full h-full object-cover" />
-          </div>
-          <div class="p-6">
-            <div class="font-bangers text-pop-yellow text-3xl mb-2">UI / UX DESIGN</div>
-            <p class="text-sm leading-relaxed opacity-90">Research, wireframes, prototypes &amp; pixel-perfect hi-fi designs for web &amp; mobile.</p>
-          </div>
-        </div>
-
-        <!-- Service card 2 (tall) -->
-        <div class="comic-panel col-span-12 md:col-span-4 bg-pop-red text-pop-white overflow-hidden md:row-span-2">
-          <div class="h-48 overflow-hidden border-b-4 border-pop-black">
-            <img src="images/service-dev.jpg" alt="Front-End Dev" class="w-full h-full object-cover" />
-          </div>
-          <div class="p-6">
-            <div class="font-bangers text-pop-yellow text-3xl mb-2">FRONT-END DEV</div>
-            <p class="text-sm leading-relaxed opacity-90 mb-4">Responsive, performant sites built with semantic HTML, modern CSS &amp; JavaScript.</p>
-            <div class="flex flex-col gap-2">
-              <div class="skill-bar-wrap">
-                <span class="font-bangers text-xs tracking-widest">HTML/CSS</span>
-                <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
-              </div>
-              <div class="skill-bar-wrap">
-                <span class="font-bangers text-xs tracking-widest">JAVASCRIPT</span>
-                <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
-              </div>
-              <div class="skill-bar-wrap">
-                <span class="font-bangers text-xs tracking-widest">REACT</span>
-                <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
-              </div>
-              <div class="skill-bar-wrap">
-                <span class="font-bangers text-xs tracking-widest">FIGMA</span>
-                <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Service card 3 -->
-        <div class="comic-panel col-span-12 md:col-span-4 bg-pop-black text-pop-white overflow-hidden">
-          <div class="aspect-video overflow-hidden border-b-4 border-pop-black">
-            <img src="images/service-brand.jpg" alt="Branding" class="w-full h-full object-cover" />
-          </div>
-          <div class="p-6">
-            <div class="font-bangers text-pop-yellow text-3xl mb-2">BRANDING</div>
-            <p class="text-sm leading-relaxed opacity-90">Logo systems, color guides &amp; typography kits that shout your brand's identity.</p>
-          </div>
-        </div>
-
-        <!-- Quote panel (bottom-left, desktop only) -->
-        <div class="comic-panel hidden md:flex col-span-8 bg-pop-yellow items-center justify-center p-6">
-          <p class="font-bangers text-pop-black text-4xl text-center tracking-widest leading-tight">
-            "GREAT DESIGN IS<br/><span class="text-pop-red">INVISIBLE.</span><br/>BAD DESIGN IS<br/><span class="text-pop-blue">EVERYWHERE."</span>
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ╔══════════════════════════════════════════╗
-       ║          PORTFOLIO GALLERY              ║
-       ╚══════════════════════════════════════════╝ -->
-  <section id="portfolio" class="relative py-16 bg-pop-white overflow-hidden">
-    <div class="dots-bg absolute inset-0 pointer-events-none opacity-10"></div>
-    <div class="relative z-10 max-w-6xl mx-auto px-4">
-      <div class="section-bang bg-pop-blue text-pop-white font-bangers inline-block px-6 py-2 text-3xl mb-8 rotate-[-1deg]">
-        CHAPTER 4: THE ADVENTURES
-      </div>
-
-      <!-- Filter bar as speech bubbles -->
-      <div id="filterBar" class="flex flex-wrap gap-3 mb-8">
-        <button class="filter-bubble active" data-filter="all">ALL CASES</button>
-        <button class="filter-bubble" data-filter="design">DESIGN</button>
-        <button class="filter-bubble" data-filter="dev">DEV</button>
-        <button class="filter-bubble" data-filter="brand">BRAND</button>
-      </div>
-
-      <!-- Uneven comic-layout grid -->
-      <div id="portfolioGrid" class="grid grid-cols-12 gap-3">
-
-        <div class="comic-panel portfolio-item col-span-12 md:col-span-5 min-h-64 overflow-hidden relative group" data-category="design">
-          <img src="images/project-1.jpg" alt="Project Pulse" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-          <div class="portfolio-caption absolute bottom-0 left-0 right-0 bg-pop-yellow border-t-4 border-pop-black p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-            <span class="font-bangers text-pop-red text-xs tracking-widest">UI DESIGN</span>
-            <h3 class="font-bangers text-pop-black text-2xl">PROJECT PULSE</h3>
-            <p class="text-xs font-comic font-bold">Mobile health-tracking app redesign</p>
-          </div>
-          <div class="star-badge absolute top-3 left-3 font-bangers text-pop-black text-xs">★ NEW</div>
-        </div>
-
-        <div class="comic-panel portfolio-item col-span-12 md:col-span-7 min-h-64 overflow-hidden relative group" data-category="dev">
-          <img src="images/project-2.jpg" alt="Folio Pro" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-          <div class="portfolio-caption absolute bottom-0 left-0 right-0 bg-pop-blue border-t-4 border-pop-black p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-            <span class="font-bangers text-pop-yellow text-xs tracking-widest">DEVELOPMENT</span>
-            <h3 class="font-bangers text-pop-white text-2xl">FOLIO PRO</h3>
-            <p class="text-xs font-comic font-bold text-pop-white">Creative agency landing page</p>
-          </div>
-        </div>
-
-        <div class="comic-panel portfolio-item col-span-12 md:col-span-4 min-h-56 overflow-hidden relative group" data-category="brand">
-          <img src="images/project-3.jpg" alt="Bloom" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-          <div class="portfolio-caption absolute bottom-0 left-0 right-0 bg-pop-red border-t-4 border-pop-black p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-            <span class="font-bangers text-pop-yellow text-xs tracking-widest">BRANDING</span>
-            <h3 class="font-bangers text-pop-white text-2xl">BLOOM</h3>
-            <p class="text-xs font-comic font-bold text-pop-white">Floral studio visual identity</p>
-          </div>
-        </div>
-
-        <div class="comic-panel portfolio-item col-span-12 md:col-span-4 min-h-56 overflow-hidden relative group" data-category="design">
-          <img src="images/project-4.jpg" alt="TrailMate" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-          <div class="portfolio-caption absolute bottom-0 left-0 right-0 bg-pop-yellow border-t-4 border-pop-black p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-            <span class="font-bangers text-pop-red text-xs tracking-widest">UI DESIGN</span>
-            <h3 class="font-bangers text-pop-black text-2xl">TRAILMATE</h3>
-            <p class="text-xs font-comic font-bold">Outdoor adventure companion app</p>
-          </div>
-        </div>
-
-        <div class="comic-panel portfolio-item col-span-12 md:col-span-4 min-h-56 overflow-hidden relative group" data-category="dev">
-          <img src="images/project-5.jpg" alt="Onda" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-          <div class="portfolio-caption absolute bottom-0 left-0 right-0 bg-pop-black border-t-4 border-pop-black p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-            <span class="font-bangers text-pop-cyan text-xs tracking-widest">DEVELOPMENT</span>
-            <h3 class="font-bangers text-pop-white text-2xl">ONDA</h3>
-            <p class="text-xs font-comic font-bold text-pop-white">Minimalist fashion e-commerce</p>
-          </div>
-        </div>
-
-        <div class="comic-panel portfolio-item col-span-12 min-h-48 overflow-hidden relative group" data-category="brand">
-          <img src="images/project-6.jpg" alt="Nova" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-          <div class="portfolio-caption absolute bottom-0 left-0 right-0 bg-pop-blue border-t-4 border-pop-black p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-            <span class="font-bangers text-pop-yellow text-xs tracking-widest">BRANDING</span>
-            <h3 class="font-bangers text-pop-white text-2xl">NOVA</h3>
-            <p class="text-xs font-comic font-bold text-pop-white">Tech startup brand system</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ╔══════════════════════════════════════════╗
-       ║            TESTIMONIALS                 ║
-       ╚══════════════════════════════════════════╝ -->
-  <section id="testimonials" class="relative py-16 bg-pop-red overflow-hidden">
-    <div class="action-lines-bg absolute inset-0 pointer-events-none opacity-10"></div>
-    <div class="relative z-10 max-w-6xl mx-auto px-4">
-      <div class="section-bang bg-pop-yellow text-pop-black font-bangers inline-block px-6 py-2 text-3xl mb-8 rotate-[1deg]">
-        CHAPTER 5: FAN MAIL!
-      </div>
-      <div class="grid grid-cols-12 gap-3">
-
-        <div class="comic-panel col-span-12 md:col-span-4 bg-pop-white p-6 flex flex-col gap-4">
-          <div class="speech-bubble-left bg-pop-yellow p-5 relative">
-            <p class="font-comic font-bold text-pop-black text-sm leading-relaxed italic">
-              "Alex transformed our brand into a cohesive visual identity. Attention to detail was OUTSTANDING!"
-            </p>
-          </div>
-          <div class="flex items-center gap-3 mt-2">
-            <div class="w-14 h-14 border-4 border-pop-black shadow-hard-sm overflow-hidden rounded-full flex-shrink-0">
-              <img src="images/client-1.jpg" alt="Minh Tran" class="w-full h-full object-cover" />
-            </div>
-            <div>
-              <strong class="font-bangers text-pop-blue text-lg block leading-none">MINH TRAN</strong>
-              <span class="text-xs font-comic text-pop-black opacity-70">CEO, Bloom Studio</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="comic-panel col-span-12 md:col-span-4 bg-pop-blue p-6 flex flex-col gap-4">
-          <div class="speech-bubble-left bg-pop-white p-5 relative">
-            <p class="font-comic font-bold text-pop-black text-sm leading-relaxed italic">
-              "40% jump in user engagement after the redesign. Alex truly understands design AND the user!"
-            </p>
-          </div>
-          <div class="flex items-center gap-3 mt-2">
-            <div class="w-14 h-14 border-4 border-pop-black shadow-hard-sm overflow-hidden rounded-full flex-shrink-0">
-              <img src="images/client-2.jpg" alt="Sara Pham" class="w-full h-full object-cover" />
-            </div>
-            <div>
-              <strong class="font-bangers text-pop-yellow text-lg block leading-none">SARA PHAM</strong>
-              <span class="text-xs font-comic text-pop-white opacity-70">Product Manager, HealthTech</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="comic-panel col-span-12 md:col-span-4 bg-pop-black p-6 flex flex-col gap-4">
-          <div class="speech-bubble-left bg-pop-yellow p-5 relative">
-            <p class="font-comic font-bold text-pop-black text-sm leading-relaxed italic">
-              "Clean code, pixel-perfect design, delivered ON TIME. Best collaborator on our store rebuild!"
-            </p>
-          </div>
-          <div class="flex items-center gap-3 mt-2">
-            <div class="w-14 h-14 border-4 border-pop-black shadow-hard-sm overflow-hidden rounded-full flex-shrink-0">
-              <img src="images/client-3.jpg" alt="Daniel Lee" class="w-full h-full object-cover" />
-            </div>
-            <div>
-              <strong class="font-bangers text-pop-yellow text-lg block leading-none">DANIEL LEE</strong>
-              <span class="text-xs font-comic text-pop-white opacity-70">Founder, Onda Fashion</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ╔══════════════════════════════════════════╗
-       ║              CONTACT                    ║
-       ╚══════════════════════════════════════════╝ -->
-  <section id="contact" class="relative py-16 bg-pop-yellow overflow-hidden">
-    <div class="dots-bg absolute inset-0 pointer-events-none opacity-10"></div>
-    <div class="relative z-10 max-w-6xl mx-auto px-4">
-      <div class="section-bang bg-pop-black text-pop-yellow font-bangers inline-block px-6 py-2 text-3xl mb-8 rotate-[-1deg]">
-        CHAPTER 6: CALL TO ACTION!
-      </div>
-      <div class="grid grid-cols-12 gap-3">
-
-        <!-- Info panel -->
-        <div class="comic-panel col-span-12 md:col-span-5 bg-pop-blue text-pop-white p-8 flex flex-col justify-between">
-          <div>
-            <h2 class="font-bangers text-5xl text-pop-yellow mb-4 tracking-wide">LET'S TEAM UP!</h2>
-            <p class="font-comic text-sm leading-relaxed opacity-90 mb-6">
-              Got a project? A wild idea? A bug that won't die? Send me a message — I'm ready for the next adventure!
-            </p>
-          </div>
-          <div class="flex flex-col gap-4">
-            <div class="contact-info-row">
-              <span class="font-bangers text-pop-yellow tracking-widest text-sm">EMAIL:</span>
-              <span class="font-comic text-sm">thuong@email.com</span>
-            </div>
-            <div class="contact-info-row">
-              <span class="font-bangers text-pop-yellow tracking-widest text-sm">PHONE:</span>
-              <span class="font-comic text-sm">+84 90 123 4567</span>
-            </div>
-            <div class="contact-info-row">
-              <span class="font-bangers text-pop-yellow tracking-widest text-sm">BASE:</span>
-              <span class="font-comic text-sm">Ho Chi Minh City, Vietnam</span>
-            </div>
-          </div>
-          <div class="font-bangers text-6xl text-pop-yellow opacity-20 mt-6 text-right select-none">CONTACT!</div>
-        </div>
-
-        <!-- Form panel -->
-        <div class="comic-panel col-span-12 md:col-span-7 bg-pop-white p-8">
-          <h3 class="font-bangers text-3xl text-pop-red mb-6 tracking-wide">SEND A MESSAGE!</h3>
-          <form id="contactForm" novalidate class="flex flex-col gap-4">
-            <div class="grid grid-cols-2 gap-4">
-              <div class="flex flex-col gap-1">
-                <label class="font-bangers text-pop-black tracking-widest text-sm" for="name">YOUR NAME</label>
-                <input id="name" name="name" type="text" placeholder="Clark Kent…" class="comic-input" required />
-              </div>
-              <div class="flex flex-col gap-1">
-                <label class="font-bangers text-pop-black tracking-widest text-sm" for="email">YOUR EMAIL</label>
-                <input id="email" name="email" type="email" placeholder="hero@city.com" class="comic-input" required />
-              </div>
-            </div>
-            <div class="flex flex-col gap-1">
-              <label class="font-bangers text-pop-black tracking-widest text-sm" for="subject">SUBJECT</label>
-              <input id="subject" name="subject" type="text" placeholder="New mission briefing…" class="comic-input" />
-            </div>
-            <div class="flex flex-col gap-1">
-              <label class="font-bangers text-pop-black tracking-widest text-sm" for="message">MESSAGE</label>
-              <textarea id="message" name="message" rows="4" placeholder="Describe your adventure…" class="comic-input resize-none" required></textarea>
-            </div>
-            <button type="submit" class="comic-btn bg-pop-red text-pop-white w-full text-xl mt-2">
-              ⚡ SEND IT! ⚡
-            </button>
-            <p id="formFeedback" class="font-bangers text-center text-lg min-h-6"></p>
-          </form>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ╔══════════════════════════════════════════╗
-       ║               FOOTER                   ║
-       ╚══════════════════════════════════════════╝ -->
+  <!-- FOOTER -->
   <footer class="bg-pop-black border-t-4 border-pop-yellow py-8">
     <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="font-bangers text-pop-yellow text-xl tracking-widest">© 2026 THUONG NGUYEN</p>
-      <p class="font-comic text-pop-white text-xs opacity-60">Built with ❤️, HTML, Tailwind &amp; CSS. No capes required.</p>
-      <a href="#hero" class="comic-btn bg-pop-yellow text-pop-black text-sm py-2 px-4">↑ BACK TO TOP</a>
+      <p class="font-bangers text-pop-yellow text-xl tracking-widest">&copy; 2026 THUONG NGUYEN</p>
+      <p class="font-comic text-pop-white text-xs opacity-60">Built with &hearts;, HTML, Tailwind &amp; CSS. No capes required.</p>
+      <a href="portfolio.html" class="comic-btn bg-pop-yellow text-pop-black text-sm py-2 px-4 font-bangers">VIEW WORK &rarr;</a>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/reveal.js"></script>
 </body>
 </html>

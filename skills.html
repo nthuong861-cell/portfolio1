@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills — Thuong Nguyen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { bangers: ['Bangers','cursive'], comic: ['Comic Neue','cursive'] },
+          colors: {
+            'pop-yellow':'#FFE000','pop-red':'#E8161B','pop-blue':'#005BAC',
+            'pop-black':'#0D0D0D','pop-white':'#FAFAFA','pop-cyan':'#00B4D8','pop-orange':'#FF6B35'
+          },
+          boxShadow: {
+            'hard-sm':'4px 4px 0 #0D0D0D','hard':'6px 6px 0 #0D0D0D',
+            'hard-lg':'8px 8px 0 #0D0D0D','hard-xl':'12px 12px 0 #0D0D0D'
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-pop-white font-comic overflow-x-hidden">
+
+  <!-- ── NAVBAR ───────────────────────────────────────────────── -->
+  <nav id="navbar" class="comic-nav fixed top-0 left-0 right-0 z-50 bg-pop-yellow border-b-4 border-pop-black">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="index.html" class="speech-bubble-logo font-bangers text-2xl tracking-wide text-pop-black relative">
+        THUONG!
+      </a>
+      <ul id="navLinks" class="hidden md:flex gap-4 items-center">
+        <li><a href="index.html"     class="bubble-link" data-page="index">HOME</a></li>
+        <li><a href="about.html"     class="bubble-link" data-page="about">ABOUT</a></li>
+        <li><a href="skills.html"    class="bubble-link" data-page="skills">SKILLS</a></li>
+        <li><a href="portfolio.html" class="bubble-link" data-page="portfolio">WORK</a></li>
+        <li><a href="contact.html"   class="bubble-link bubble-link--cta" data-page="contact">HIRE ME!</a></li>
+      </ul>
+      <button id="navToggle" class="md:hidden flex flex-col gap-1.5 p-2 border-2 border-pop-black bg-pop-white shadow-hard-sm" aria-label="Toggle menu">
+        <span class="ham-line block w-6 h-0.5 bg-pop-black transition-all duration-300"></span>
+        <span class="ham-line block w-6 h-0.5 bg-pop-black transition-all duration-300"></span>
+        <span class="ham-line block w-6 h-0.5 bg-pop-black transition-all duration-300"></span>
+      </button>
+    </div>
+    <div id="mobileMenu" class="mobile-menu hidden md:hidden bg-pop-blue border-t-4 border-pop-black px-4 pb-4 pt-2">
+      <ul class="flex flex-col gap-3">
+        <li><a href="index.html"     class="bubble-link-mobile" data-page="index">HOME</a></li>
+        <li><a href="about.html"     class="bubble-link-mobile" data-page="about">ABOUT</a></li>
+        <li><a href="skills.html"    class="bubble-link-mobile" data-page="skills">SKILLS</a></li>
+        <li><a href="portfolio.html" class="bubble-link-mobile" data-page="portfolio">WORK</a></li>
+        <li><a href="contact.html"   class="bubble-link-mobile bubble-link-mobile--cta" data-page="contact">HIRE ME!</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── CHAPTER 3 : SUPERPOWERS ──────────────────────────────── -->
+  <main class="pt-16">
+    <section id="skills" class="py-20 px-4 bg-pop-white">
+      <div class="max-w-6xl mx-auto">
+
+        <!-- chapter label -->
+        <div class="text-center mb-12">
+          <span class="section-bang font-bangers text-5xl bg-pop-blue text-pop-white border-4 border-pop-black shadow-hard-lg px-6 py-2 inline-block rotate-[1deg]">
+            CHAPTER 3: SUPERPOWERS
+          </span>
+        </div>
+
+        <!-- 3-service panel grid -->
+        <div class="grid md:grid-cols-3 gap-0 border-4 border-pop-black shadow-hard-xl">
+
+          <!-- UI/UX Design -->
+          <div class="comic-panel bg-pop-cyan border-r-4 border-pop-black p-8 flex flex-col gap-4">
+            <div class="relative h-36 border-4 border-pop-black overflow-hidden bg-pop-yellow">
+              <img src="images/service-ui.jpg" alt="UI/UX Design" class="w-full h-full object-cover" />
+              <span class="absolute top-2 left-2 bg-pop-blue text-pop-white font-bangers text-xs px-2 py-1 border-2 border-pop-black">UI/UX</span>
+            </div>
+            <h3 class="font-bangers text-2xl text-pop-black tracking-wide">UI / UX Design</h3>
+            <p class="font-comic text-sm text-pop-black leading-relaxed flex-1">
+              Wireframes to polished interfaces. I design with empathy — every click, scroll,
+              and tap is intentional and delightful.
+            </p>
+            <ul class="font-comic text-xs text-pop-black space-y-1">
+              <li>✦ Figma / Sketch</li>
+              <li>✦ User Research</li>
+              <li>✦ Prototyping</li>
+              <li>✦ Design Systems</li>
+            </ul>
+          </div>
+
+          <!-- Front-end Dev -->
+          <div class="comic-panel bg-pop-red border-r-4 border-pop-black p-8 flex flex-col gap-4">
+            <div class="relative h-36 border-4 border-pop-black overflow-hidden bg-pop-yellow">
+              <img src="images/service-dev.jpg" alt="Front-end Development" class="w-full h-full object-cover" />
+              <span class="absolute top-2 left-2 bg-pop-black text-pop-yellow font-bangers text-xs px-2 py-1 border-2 border-pop-yellow">DEV</span>
+            </div>
+            <h3 class="font-bangers text-2xl text-pop-white tracking-wide">Front-end Dev</h3>
+            <p class="font-comic text-sm text-pop-white leading-relaxed flex-1">
+              Pixel-perfect, performant builds. I bring designs to life with clean semantic code
+              that works on every device.
+            </p>
+            <!-- skill bars -->
+            <div class="space-y-3 mt-2">
+              <div>
+                <div class="flex justify-between font-bangers text-pop-white text-xs mb-1"><span>HTML / CSS</span><span>95%</span></div>
+                <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between font-bangers text-pop-white text-xs mb-1"><span>JavaScript</span><span>85%</span></div>
+                <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between font-bangers text-pop-white text-xs mb-1"><span>React / Vue</span><span>75%</span></div>
+                <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Brand Identity -->
+          <div class="comic-panel bg-pop-black p-8 flex flex-col gap-4">
+            <div class="relative h-36 border-4 border-pop-yellow overflow-hidden bg-pop-yellow">
+              <img src="images/service-brand.jpg" alt="Brand Identity" class="w-full h-full object-cover" />
+              <span class="absolute top-2 left-2 bg-pop-yellow text-pop-black font-bangers text-xs px-2 py-1 border-2 border-pop-black">BRAND</span>
+            </div>
+            <h3 class="font-bangers text-2xl text-pop-yellow tracking-wide">Brand Identity</h3>
+            <p class="font-comic text-sm text-pop-white leading-relaxed flex-1">
+              Logos, color palettes, typography systems. I craft brand voices that shout from
+              rooftops and whisper in the right rooms.
+            </p>
+            <ul class="font-comic text-xs text-pop-yellow space-y-1">
+              <li>✦ Logo Design</li>
+              <li>✦ Brand Guidelines</li>
+              <li>✦ Print &amp; Digital</li>
+              <li>✦ Illustration</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- quote strip -->
+        <div class="mt-0 border-4 border-pop-black border-t-0 shadow-hard-xl bg-pop-yellow">
+          <p class="font-bangers text-pop-black text-center py-6 text-xl md:text-2xl tracking-wide px-4">
+            "GREAT DESIGN IS NOT DECORATION — IT'S COMMUNICATION."
+          </p>
+        </div>
+
+        <!-- next page CTA -->
+        <div class="text-center mt-12">
+          <a href="portfolio.html" class="comic-btn bg-pop-black text-pop-yellow font-bangers text-2xl px-10 py-4 inline-block shadow-hard-lg tracking-wide border-4 border-pop-black">
+            🎨 VIEW MY WORK →
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────── -->
+  <footer class="bg-pop-black border-t-4 border-pop-yellow py-8">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="font-bangers text-pop-yellow text-xl tracking-widest">© 2026 THUONG NGUYEN</p>
+      <p class="font-comic text-pop-white text-xs opacity-60">Built with ❤️, HTML, Tailwind &amp; CSS. No capes required.</p>
+      <a href="index.html" class="comic-btn bg-pop-yellow text-pop-black text-sm py-2 px-4 font-bangers">↑ HOME</a>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/reveal.js"></script>
+  <script src="js/skills.js"></script>
+</body>
+</html>

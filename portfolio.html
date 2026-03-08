@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work — Thuong Nguyen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { bangers: ['Bangers','cursive'], comic: ['Comic Neue','cursive'] },
+          colors: {
+            'pop-yellow':'#FFE000','pop-red':'#E8161B','pop-blue':'#005BAC',
+            'pop-black':'#0D0D0D','pop-white':'#FAFAFA','pop-cyan':'#00B4D8','pop-orange':'#FF6B35'
+          },
+          boxShadow: {
+            'hard-sm':'4px 4px 0 #0D0D0D','hard':'6px 6px 0 #0D0D0D',
+            'hard-lg':'8px 8px 0 #0D0D0D','hard-xl':'12px 12px 0 #0D0D0D'
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-pop-white font-comic overflow-x-hidden">
+
+  <!-- ── NAVBAR ───────────────────────────────────────────────── -->
+  <nav id="navbar" class="comic-nav fixed top-0 left-0 right-0 z-50 bg-pop-yellow border-b-4 border-pop-black">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="index.html" class="speech-bubble-logo font-bangers text-2xl tracking-wide text-pop-black relative">
+        THUONG!
+      </a>
+      <ul id="navLinks" class="hidden md:flex gap-4 items-center">
+        <li><a href="index.html"     class="bubble-link" data-page="index">HOME</a></li>
+        <li><a href="about.html"     class="bubble-link" data-page="about">ABOUT</a></li>
+        <li><a href="skills.html"    class="bubble-link" data-page="skills">SKILLS</a></li>
+        <li><a href="portfolio.html" class="bubble-link" data-page="portfolio">WORK</a></li>
+        <li><a href="contact.html"   class="bubble-link bubble-link--cta" data-page="contact">HIRE ME!</a></li>
+      </ul>
+      <button id="navToggle" class="md:hidden flex flex-col gap-1.5 p-2 border-2 border-pop-black bg-pop-white shadow-hard-sm" aria-label="Toggle menu">
+        <span class="ham-line block w-6 h-0.5 bg-pop-black transition-all duration-300"></span>
+        <span class="ham-line block w-6 h-0.5 bg-pop-black transition-all duration-300"></span>
+        <span class="ham-line block w-6 h-0.5 bg-pop-black transition-all duration-300"></span>
+      </button>
+    </div>
+    <div id="mobileMenu" class="mobile-menu hidden md:hidden bg-pop-blue border-t-4 border-pop-black px-4 pb-4 pt-2">
+      <ul class="flex flex-col gap-3">
+        <li><a href="index.html"     class="bubble-link-mobile" data-page="index">HOME</a></li>
+        <li><a href="about.html"     class="bubble-link-mobile" data-page="about">ABOUT</a></li>
+        <li><a href="skills.html"    class="bubble-link-mobile" data-page="skills">SKILLS</a></li>
+        <li><a href="portfolio.html" class="bubble-link-mobile" data-page="portfolio">WORK</a></li>
+        <li><a href="contact.html"   class="bubble-link-mobile bubble-link-mobile--cta" data-page="contact">HIRE ME!</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── CHAPTER 4 : THE ADVENTURES ──────────────────────────── -->
+  <main class="pt-16">
+    <section id="portfolio" class="py-20 px-4 bg-pop-white">
+      <div class="max-w-6xl mx-auto">
+
+        <!-- chapter label -->
+        <div class="text-center mb-10">
+          <span class="section-bang font-bangers text-5xl bg-pop-yellow text-pop-black border-4 border-pop-black shadow-hard-lg px-6 py-2 inline-block rotate-[-1deg]">
+            CHAPTER 4: THE ADVENTURES
+          </span>
+        </div>
+
+        <!-- filter bar -->
+        <div id="filterBar" class="flex flex-wrap justify-center gap-3 mb-10">
+          <button class="filter-bubble active" data-filter="all">ALL ISSUES</button>
+          <button class="filter-bubble" data-filter="ui">UI/UX</button>
+          <button class="filter-bubble" data-filter="dev">FRONT-END</button>
+          <button class="filter-bubble" data-filter="brand">BRANDING</button>
+        </div>
+
+        <!-- portfolio grid -->
+        <div id="portfolioGrid" class="grid grid-cols-12 gap-0 border-4 border-pop-black shadow-hard-xl">
+
+          <!-- item 1 — large -->
+          <div class="portfolio-item comic-panel col-span-12 md:col-span-7 border-b-4 border-r-0 md:border-r-4 border-pop-black relative overflow-hidden min-h-[280px] group" data-category="ui">
+            <img src="images/project-1.jpg" alt="Project 1" class="w-full h-full object-cover absolute inset-0 transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-pop-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-6">
+              <h3 class="font-bangers text-pop-yellow text-3xl text-center">NOVA BANKING APP</h3>
+              <p class="font-comic text-pop-white text-sm text-center">Complete UI/UX redesign for a fintech startup</p>
+              <span class="star-badge font-bangers text-xs bg-pop-yellow text-pop-black px-3 py-1 border-2 border-pop-black">UI/UX</span>
+            </div>
+          </div>
+
+          <!-- item 2 -->
+          <div class="portfolio-item comic-panel col-span-12 md:col-span-5 border-b-4 border-pop-black relative overflow-hidden min-h-[280px] group" data-category="dev">
+            <img src="images/project-2.jpg" alt="Project 2" class="w-full h-full object-cover absolute inset-0 transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-pop-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-6">
+              <h3 class="font-bangers text-pop-yellow text-3xl text-center">HERO STORE</h3>
+              <p class="font-comic text-pop-white text-sm text-center">Full e-commerce front-end with React</p>
+              <span class="star-badge font-bangers text-xs bg-pop-red text-pop-white px-3 py-1 border-2 border-pop-black">FRONT-END</span>
+            </div>
+          </div>
+
+          <!-- item 3 -->
+          <div class="portfolio-item comic-panel col-span-12 md:col-span-4 border-b-4 border-r-0 md:border-r-4 border-pop-black relative overflow-hidden min-h-[240px] group" data-category="brand">
+            <img src="images/project-3.jpg" alt="Project 3" class="w-full h-full object-cover absolute inset-0 transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-pop-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-6">
+              <h3 class="font-bangers text-pop-yellow text-3xl text-center">ZAPP AGENCY</h3>
+              <p class="font-comic text-pop-white text-sm text-center">Brand identity for a creative studio</p>
+              <span class="star-badge font-bangers text-xs bg-pop-blue text-pop-white px-3 py-1 border-2 border-pop-black">BRANDING</span>
+            </div>
+          </div>
+
+          <!-- item 4 -->
+          <div class="portfolio-item comic-panel col-span-12 md:col-span-4 border-b-4 border-r-0 md:border-r-4 border-pop-black relative overflow-hidden min-h-[240px] group" data-category="ui">
+            <img src="images/project-4.jpg" alt="Project 4" class="w-full h-full object-cover absolute inset-0 transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-pop-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-6">
+              <h3 class="font-bangers text-pop-yellow text-3xl text-center">PULSE HEALTH</h3>
+              <p class="font-comic text-pop-white text-sm text-center">Health tracking dashboard UI</p>
+              <span class="star-badge font-bangers text-xs bg-pop-yellow text-pop-black px-3 py-1 border-2 border-pop-black">UI/UX</span>
+            </div>
+          </div>
+
+          <!-- item 5 -->
+          <div class="portfolio-item comic-panel col-span-12 md:col-span-4 border-b-4 border-pop-black relative overflow-hidden min-h-[240px] group" data-category="dev">
+            <img src="images/project-5.jpg" alt="Project 5" class="w-full h-full object-cover absolute inset-0 transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-pop-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-6">
+              <h3 class="font-bangers text-pop-yellow text-3xl text-center">SWIFT BLOG</h3>
+              <p class="font-comic text-pop-white text-sm text-center">Blazing-fast blog platform with Next.js</p>
+              <span class="star-badge font-bangers text-xs bg-pop-red text-pop-white px-3 py-1 border-2 border-pop-black">FRONT-END</span>
+            </div>
+          </div>
+
+          <!-- item 6 — full width -->
+          <div class="portfolio-item comic-panel col-span-12 relative overflow-hidden min-h-[200px] group" data-category="brand">
+            <img src="images/project-6.jpg" alt="Project 6" class="w-full h-full object-cover absolute inset-0 transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-pop-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-6">
+              <h3 class="font-bangers text-pop-yellow text-3xl text-center">ATOMIC REBRAND</h3>
+              <p class="font-comic text-pop-white text-sm text-center">Full rebrand for a tech startup — logo, guidelines &amp; web</p>
+              <span class="star-badge font-bangers text-xs bg-pop-blue text-pop-white px-3 py-1 border-2 border-pop-black">BRANDING</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- next page CTA -->
+        <div class="text-center mt-12">
+          <a href="contact.html" class="comic-btn bg-pop-red text-pop-white font-bangers text-2xl px-10 py-4 inline-block shadow-hard-lg tracking-wide">
+            📬 HIRE ME →
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────── -->
+  <footer class="bg-pop-black border-t-4 border-pop-yellow py-8">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="font-bangers text-pop-yellow text-xl tracking-widest">© 2026 THUONG NGUYEN</p>
+      <p class="font-comic text-pop-white text-xs opacity-60">Built with ❤️, HTML, Tailwind &amp; CSS. No capes required.</p>
+      <a href="index.html" class="comic-btn bg-pop-yellow text-pop-black text-sm py-2 px-4 font-bangers">↑ HOME</a>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/reveal.js"></script>
+  <script src="js/portfolio.js"></script>
+</body>
+</html>
